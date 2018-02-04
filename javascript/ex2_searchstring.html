@@ -7,11 +7,11 @@
 <body>
 <script type="text/javascript">
 	function Search(){
-		var count = 0;
         var txtarea = document.getElementById('textarea').value;
         var txtinput = document.getElementById('input').value;
         var radio = document.querySelector('input[type="radio"]:checked').value;
         var substring = txtarea.split(" ");
+		var count = 0;
         substring.forEach( key => {
             if(radio == "2"){
                 key = key.toUpperCase();
