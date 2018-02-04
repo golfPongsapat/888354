@@ -7,26 +7,26 @@
 <body>
 <script type="text/javascript">
 	function Search(){
-			var count = 0;
-            var txtarea = document.getElementById('textarea').value;
-            var txtinput = document.getElementById('input').value;
-            var radio = document.querySelector('input[type="radio"]:checked').value;
-            var substring = txtarea.split(" ");
-            substring.forEach( key => {
-                if(radio == "2"){
-                    key = key.toUpperCase();
-                    txtinput = txtinput.toUpperCase();
-                    if(key.search(txtinput) > -1){
-                        count++;
-                    }
-                    document.getElementById('output').innerHTML = count;
-                }else{
-                    if(key.search(txtinput) > -1){
-                        count++;
-                    }
-                    document.getElementById('output').innerHTML = count;
-                }  
-            });
+		var count = 0;
+        var txtarea = document.getElementById('textarea').value;
+        var txtinput = document.getElementById('input').value;
+        var radio = document.querySelector('input[type="radio"]:checked').value;
+        var substring = txtarea.split(" ");
+        substring.forEach( key => {
+            if(radio == "2"){
+                key = key.toUpperCase();
+                txtinput = txtinput.toUpperCase();
+                if(key.search(txtinput) > -1){
+                    count++;
+                }
+                document.getElementById('output').innerHTML = count;
+            }else{
+                if(key.search(txtinput) > -1){
+                    count++;
+                }
+                document.getElementById('output').innerHTML = count;
+            }  
+        });
 	}//function search
 </script>
 	<center>
