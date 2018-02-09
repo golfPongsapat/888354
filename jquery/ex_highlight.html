@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>highlightText</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+            $("#btn-search").click(function(){
+                var keyword = $("#search").val();
+                $("#context").unmark({done:function(){
+                	$("#context").mark(keyword, {done:function(count){
+                		$("#found").html(count);
+                		}
+                	});
+                }
+            	});
+            });
+        });
+	</script>
+</head>
+<body>
+	<center>
+        <h1>Ex - Highlight Text</h1>
+        <hr>
+        Search : <input type="text" id="search">
+        <br><br>
+        <button id="btn-search">Search</button>
+        <br><br>
+        found : <span id="found">0</span> word
+    </center>
+    <br><br>
+    <form id="context">
+    	<fieldset>
+            <legend><h2>The Article : Continuous Digital Health</h2></legend>
+            <p>The way we deal with our health is undergoing a major transformation, not only because mobile Internet technology has made it possible to have continuous access to personal health information, but also because breaking the trend of ever-growing healthcare costs is increasingly necessary. Estimates indicate that more than 70 percent of the world population will have a smartphone by 2017. Connectivity, interoperability, sensing, and instant feedback through smartphones all provide new opportunities for gaining insights into our health behavior. Such insights are improving, and understanding what motivates people to make healthy changes throughout their lifetimes is becoming more important. Internet technology not only lets us continuously monitor an individual's physiological and psychological state, but also allows for building up a lifelong record of physical, mental, and social health.</p>
+    	</fieldset>
+    </form>
+    <!-- <form>
+<fieldset>
+<legend>ข้อมูลส่วนตัว</legend>
+ชื่อ: <input type="text" /><br />
+นามสกุล: <input type="text" /><br />
+อีเมล: <input type="text" /><br />
+</fieldset>
+<fieldset>
+<legend>ข้อมูลบริษัท</legend>
+บริษัท: <input type="text" /><br />
+ประเภทของกิจการ: <input type="text" /><br />
+ตำแหน่ง: <input type="text" /><br />
+</fieldset>
+</form> -->
+</body>
+</html>

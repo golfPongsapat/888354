@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>randomNumber</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var check = 0
+		       $('#btn-random').click(function(){	
+		        	var ran1 = Math.floor((Math.random() * 999) + 1);
+		        	var ran2 = Math.floor((Math.random() * 999) + 1);
+		        	// console.log(ran1);
+		        	// console.log(ran2);
+		        	$('#valueRan').text(ran1+" + "+ran2);
+		        	check = ran1+ran2
+			    });
+		        $('#btn-submit').click(function(){
+		        	var result_text = $('#result-text').val();
+		        // var send = result_text == check ? "That's correct" : "That's wrong. The answer is "+ check
+		        	if(result_text==check){
+		        		$('#text-check').text("That's correct");
+		        		$("#text-check").css("color", "green");
+		        	}
+		        	else{
+		        		$('#text-check').text("That's wrong. The answer is " + check);
+		        		$("#text-check").css("color", "red");
+		        	}
+		        	// $('#text-check').text(send);
+		        });
+		});
+</script>
+</head>
+<body>
+	<center>
+		<h1>Ex-Random Number For Answer</h1>
+		<hr>
+		<button type="button" name="btn-random" id="btn-random" >Random Number</button>
+		<br><br><br>
+		<div><span id="valueRan"></span> = <input type="text" name="result" id="result-text"></div>
+		<br><br>
+		<button type="button" name="btn-submit" id="btn-submit">Send Answer</button><br><br>
+		Result : <h2 id="text-check"></h2>
+		</center>
+</body>
+</html>
